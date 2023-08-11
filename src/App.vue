@@ -7,4 +7,11 @@ import { RouterView } from "vue-router";
   <!-- 一级路由组件出口 -->
   <!-- 也可以写<router-view  /> -->
   <RouterView />
+  <div class="test">test scss</div>
 </template>
+
+<style lang="scss" scoped>
+.test {
+  color: $helpColor;
+}
+</style>

@@ -36,7 +36,9 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         //2.自动导入定制化样式文件进行样式重叠
-        additionalData: `@use "@/styles/element/index.scss" as *;`,
+        additionalData: `@use "@/styles/element/index.scss" as *;
+        @use "@/styles/var.scss" as *;`,
+        //配置自动导入var.scss
       },
     },
   },
