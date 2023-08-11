@@ -6,6 +6,7 @@ import HelloWorld from "@/views/HomeView.vue";
 
 <template>
   <header>
+    <el-button type="primary">Primary</el-button>
     <img
       alt="Vue logo"
       class="logo"
