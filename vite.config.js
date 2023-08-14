@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 
 //element-plus按需引入
+//自动导入
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
@@ -36,8 +37,10 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         //2.自动导入定制化样式文件进行样式重叠
-        additionalData: `@use "@/styles/element/index.scss" as *;
-        @use "@/styles/var.scss" as *;`,
+        additionalData: `
+        @use "@/styles/element/index.scss" as *;
+        @use "@/styles/var.scss" as *;
+        `,
         //配置自动导入var.scss
       },
     },
