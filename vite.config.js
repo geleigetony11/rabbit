@@ -16,6 +16,9 @@ export default defineConfig({
     vue(),
     //element-plus配置
     AutoImport({
+      //自动引入插件的配置
+      imports: ["vue"],
+      dts: "src/auto-import.d.ts",
       resolvers: [ElementPlusResolver()],
     }),
     Components({
