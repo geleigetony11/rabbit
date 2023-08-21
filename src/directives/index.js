@@ -8,6 +8,7 @@ export const lazyPlugin = {
     //懒加载指令逻辑
     //定义全局指令,使用时用 v-img-lazy=""指令
     app.directive("img-lazy", {
+      // 在绑定元素的父组件及他自己的所有子节点都挂载完成后调用
       mounted(el, binding) {
         //el:指令绑定的那个元素 img
         //binding:binding.value 指令等于号后面绑定的表达式的值 图片url
