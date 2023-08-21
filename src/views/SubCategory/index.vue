@@ -46,7 +46,7 @@ const load = async () => {
   reqData.value.page++;
   const res = await getSubCategoryAPI(reqData.value);
   //数组拼接，展开运算符
-  goodsList.value = [goodsList.value, ...res.result.items];
+  goodsList.value = [...goodsList.value, ...res.result.items];
   //加载完毕，停止监听
   if (res.result.items.length === 0) {
     //没有数据，停止监听
