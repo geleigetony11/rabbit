@@ -8,6 +8,8 @@ import { createPinia } from "pinia";
 
 //引入懒加载插件并注册,use注册
 import { lazyPlugin } from "./directives/index.js";
+//引入全局组件插件
+import { componentPlugin } from "@/components/index.js";
 
 import App from "./App.vue";
 import router from "./router";
@@ -20,4 +22,9 @@ import router from "./router";
 
 const app = createApp(App);
 
-app.use(createPinia()).use(router).use(lazyPlugin).mount("#app");
+app
+  .use(createPinia())
+  .use(router)
+  .use(lazyPlugin)
+  .use(componentPlugin)
+  .mount("#app");
