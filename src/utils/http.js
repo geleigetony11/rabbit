@@ -1,4 +1,6 @@
 import axios from "axios";
+import { ElMessage } from "element-plus";
+import "element-plus/theme-chalk/el-message.css";
 
 //创建axios实例
 const httpInstance = axios.create({
@@ -29,7 +31,8 @@ httpInstance.interceptors.response.use(
   },
   function (error) {
     // 超出 2xx 范围的状态码都会触发该函数。
-    // 对响应错误做点什么
+    // 统一错误提示
+    ElMessage({ type: "warning", message: error.response.data.message });
     return Promise.reject(error);
   }
 );
