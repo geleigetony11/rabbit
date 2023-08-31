@@ -3,6 +3,7 @@ import "@/styles/common.scss";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 //main.js中不要写逻辑函数,在外面封装好,引入使用
 
@@ -21,10 +22,8 @@ import router from "./router";
 // });
 
 const app = createApp(App);
+const pinia = createPinia();
+//注册持久化插件
+pinia.use(piniaPluginPersistedstate);
 
-app
-  .use(createPinia())
-  .use(router)
-  .use(lazyPlugin)
-  .use(componentPlugin)
-  .mount("#app");
+app.use(pinia).use(router).use(lazyPlugin).use(componentPlugin).mount("#app");
