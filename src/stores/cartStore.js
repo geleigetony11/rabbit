@@ -1,5 +1,5 @@
+import { computed } from "vue";
 //封装购物车模块
-
 import { ref } from "vue";
 import { defineStore } from "pinia";
 
@@ -32,11 +32,25 @@ export const useCartStore = defineStore(
       const idx = cartList.value.findIndex((item) => skuId === item.skuId);
       cartList.value.splice(idx, 1);
       //2.使用数组的过滤方法 - filter
+      // cartList.value.filter((item) => skuId !== item.skuId);
     };
+
+    //计算属性
+    //1.总数量-所有项的count之和
+    const allCount = computed(() =>
+      cartList.value.reduce((a, c) => a + c.count, 0)
+    );
+    //2.总价-所有项的count*price之和
+    const allPrice = computed(() =>
+      cartList.value.reduce((a, c) => a + c.count * c.price, 0)
+    );
+
     return {
       cartList,
       addCart,
       delCart,
+      allCount,
+      allPrice,
     };
   },
   {
