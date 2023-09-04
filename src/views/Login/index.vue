@@ -8,7 +8,7 @@ import "element-plus/theme-chalk/el-message.css";
 //跳转路由
 import { useRouter } from "vue-router";
 //pinia
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/userStore";
 const userStore = useUserStore();
 
 //1.准备表单对象
@@ -381,3 +381,4 @@ const doLogin = () => {
   color: #fff;
 }
 </style>
+@/stores/userStore

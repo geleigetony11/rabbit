@@ -1,7 +1,7 @@
 <script setup>
 //vueUse中引入的函数
 import { useScroll } from "@vueuse/core";
-import { useCategoryStore } from "@/stores/category";
+import { useCategoryStore } from "@/stores/categoryStore";
 
 const { y } = useScroll(window);
 
@@ -118,3 +118,4 @@ const categoryStore = useCategoryStore();
   }
 }
 </style>
+@/stores/categoryStore
