@@ -26,7 +26,7 @@ const cartStore = useCartStore();
           </RouterLink>
           <i
             class="iconfont icon-close-new"
-            @click="store.delCart(i.skuId)"></i>
+            @click="cartStore.delCart(i.skuId)"></i>
         </div>
       </div>
       <div class="foot">
